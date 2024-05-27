@@ -1,0 +1,17 @@
+class HelloZruna:
+    def __init__(self, message):
+        self.message = message
+
+    def __repr__(self):
+        return ''.join([chr(ord(char)) for char in self.message])
+
+def complicated_function(hello_world_obj):
+    binary_message = ' '.join(format(ord(char), '08b') for char in str(hello_world_obj))
+    ascii_message = ''.join(chr(int(binary, 2)) for binary in binary_message.split(' '))
+    return ascii_message
+
+if __name__ == "__main__":
+    message = "HellO,ZurnA DürüM!"
+    hello_world_instance = HelloWorld(message)
+    result = complicated_function(hello_world_instance)
+    print(result)
